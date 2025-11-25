@@ -4,8 +4,27 @@
     <title>Posts</title>
 {% endblock %}
 
+
 {% block body %}
     <h1>All Posts</h1>
+
+        <hr>
+            <h2>Create New Blog Post:</h2>
+            <form action="/posts" method="POST">
+
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required><br><br>
+
+                <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author"><br><br>
+
+                <label for="content">Content:</label><br>
+                <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        <hr>
+
 
         {% for post in posts %}
             <h2>{{ post.title }}</h2>
