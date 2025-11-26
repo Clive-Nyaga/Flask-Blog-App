@@ -17,18 +17,6 @@ class BlogPost(db.Model):
         # return f"Blog Post('{self.title}', '{self.author}')"
         return 'Blog Post ' + str(self.id)
 
-all_posts = [
-    {
-        'title': 'Post 1',
-        'content': 'This is the content of post 1.',
-        'author': 'John Doe'
-    },
-    {
-        'title': 'Post 2',
-        'content': 'This is the content of post 2.'
-    }
-]
-
 @app.route('/')
 def index():
     return "<h1>Home Page 1</h1>"
