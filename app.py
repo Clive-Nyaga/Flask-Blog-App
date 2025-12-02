@@ -19,7 +19,8 @@ class BlogPost(db.Model):
 
 @app.route('/')
 def index():
-    return "<h1>Home Page 1</h1>"
+   # return "<h1>Home Page 1</h1>"
+   return render_template('index.html')
 
 @app.route('/posts', methods=['GET', 'POST'])
 def posts():
