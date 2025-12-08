@@ -1,51 +1,70 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <title>Posts</title>
+<title>Posts</title>
 {% endblock %}
 
 
 {% block body %}
-    <h1>All Posts</h1>
+<h1>All Posts</h1>
 
-        <hr>
-            <h2>Create New Blog Post:</h2>
-            <form action="/posts" method="POST">
+<hr>
+<h2>Create New Blog Post:</h2>
+<form action="/posts" method="POST">
 
-                <label for="title">Title:</label><br>
-                <input type="text" id="title" name="title" required><br><br>
+    <label for="title">Title:</label>
+    <input class="form-control" type="text" name="title" id="title" placeholder="Enter Title" aria-label="Enter Title"
+        required>
+    <br>
 
-                <label for="author">Author:</label><br>
-                <input type="text" id="author" name="author"><br><br>
+    <!--<label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required><br><br>-->
 
-                <label for="content">Content:</label><br>
-                <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
-
-                <input type="submit" value="Post">
-            </form>
-        <hr>
+    <label for="author">Author:</label>
+    <input class="form-control" type="text" name="author" id="author" placeholder="Enter Author"
+        aria-label="Enter Author">
+    <br>
 
 
-        {% for post in posts %}
-            <br>
-            <h2>{{ post.title }}</h2>
+    <!--<label for="author">Author:</label><br>
+                <input type="text" id="author" name="author"><br><br>-->
 
-            {% if post.author %}
-                <!--<h3>By: {{ post.author }}</h3>-->
-                <small>Written by {{ post.author }} on {{ post.date_posted }}</small>
-            {% else %}
-                <!--<h3>By: Unknown Author</h3>-->
-                <small>Written by Unknown Author on {{ post.date_posted }}</small>
-            {% endif %}
-            <br>
-            <br>
+    <label for="content">Content:</label>
+    <!--<div class="form-group">-->
+    <!--<label for="exampleFormControlTextarea1">Content:</label>-->
+    <textarea class="form-control" name="content" id="content" placeholder="Enter Content" aria-label="Enter Content" rows="3"></textarea>
+    <br>
+    <!--</div>-->
 
-            <p>{{ post.content }}</p>
-            <a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete</a>
-            <a class="btn btn-primary" href="/posts/edit/{{post.id}}">Edit</a>
-            <br>
-            <hr>
+    <!--<label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>-->
 
-        {% endfor %}
+    <input type="submit" value="Post">
+</form>
+<hr>
+
+
+{% for post in posts %}
+<br>
+<h2>{{ post.title }}</h2>
+
+{% if post.author %}
+<!--<h3>By: {{ post.author }}</h3>-->
+<small>Written by {{ post.author }} on {{ post.date_posted }}</small>
+{% else %}
+<!--<h3>By: Unknown Author</h3>-->
+<small>Written by Unknown Author on {{ post.date_posted }}</small>
+{% endif %}
+<br>
+<br>
+
+<p style="white-space: pre-wrap">{{ post.content }}</p>
+<br>
+<a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete</a>
+<a class="btn btn-primary" href="/posts/edit/{{post.id}}">Edit</a>
+<br>
+<hr>
+
+{% endfor %}
 
 {% endblock %}
