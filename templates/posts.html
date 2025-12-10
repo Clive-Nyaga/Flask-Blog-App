@@ -6,9 +6,13 @@
 
 
 {% block body %}
-<h1>All Posts</h1>
+<br>
+<div class="d-flex justify-content-between align-items-center">
+    <h1 style="display: inline;">All Posts</h1>
+    <a style="display: inline;" class="btn btn-success float-right" href="/posts/new"> + New Post</a>
+</div>
 
-<hr>
+<!--<hr>
 <h2>Create New Blog Post:</h2>
 <form action="/posts" method="POST">
 
@@ -17,8 +21,8 @@
         required>
     <br>
 
-    <!--<label for="title">Title:</label><br>
-                <input type="text" id="title" name="title" required><br><br>-->
+    <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required><br><br>
 
     <label for="author">Author:</label>
     <input class="form-control" type="text" name="author" id="author" placeholder="Enter Author"
@@ -26,21 +30,21 @@
     <br>
 
 
-    <!--<label for="author">Author:</label><br>
-                <input type="text" id="author" name="author"><br><br>-->
+    <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author"><br><br>
 
     <label for="content">Content:</label>
-    <!--<div class="form-group">-->
-    <!--<label for="exampleFormControlTextarea1">Content:</label>-->
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Content:</label>
     <textarea class="form-control" name="content" id="content" placeholder="Enter Content" aria-label="Enter Content" rows="3"></textarea>
     <br>
-    <!--</div>-->
+    </div>
 
-    <!--<label for="content">Content:</label><br>
-    <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>-->
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
 
     <input type="submit" value="Post">
-</form>
+</form>-->
 <hr>
 
 
